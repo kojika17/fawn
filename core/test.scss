@@ -1,0 +1,69 @@
+//
+// Test
+// --------------------------------------------------
+@import 'fawn';
+
+
+// Test
+.mq-screen {
+  @include mq(sm) {
+    content: 'sm';
+  }
+  @include mq(sm, min) {
+    content: 'sm min';
+  }
+
+  @include mq(md) {
+    content: 'md';
+  }
+
+  @include mq(1208px) {
+    content: 'number';
+  }
+}
+
+
+.bgsz {
+  @include bgsz('./foo.png', 2, 100px, 200px) {
+    background-repeat: no-repeat;
+  }
+}
+
+.position-a {
+  @include position(0);
+}
+.position-b {
+  @include position(fixed, 0);
+}
+
+.position-c {
+  @include position(fixed, 10px);
+}
+
+
+.youtube {
+ @include youtube(560, 320);
+}
+
+
+input.placeholder {
+  @include placeholder {
+    color: #aaa;
+  }
+}
+
+
+.header {
+  z-index: z(header);
+}
+.modal {
+  z-index: z(modal);
+}
+.modal-button {
+  z-index: z(modal, button);
+}
+
+
+
+
+

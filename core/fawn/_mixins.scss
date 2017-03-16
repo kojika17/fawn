@@ -1,0 +1,113 @@
+//
+// Mixins
+// --------------------------------------------------
+
+//== Breakpoint
+@mixin mq($size, $width: max) {
+  $result: 0;
+  @if(type-of($size) == number) { 
+    $result: $size;
+  } @else {
+    @each $key, $value in $screen {
+      @if($key == $size) { $result: $value; }
+    }
+  }
+  @if($width == min) { $result: $result - 1; }
+  @media (#{$width}-width: #{$result}) {
+    @content;
+  }
+}
+
+
+//== Background
+@mixin bgsz($options...) {
+  $url: nth($options, 1);
+  $ratio: nth($options, 2);
+
+  @if($postcss-assets) {
+
+    @if(nth($options, 2) > 1) {
+      width: width(#{$url}, #{$ratio});
+      height: height(#{$url}, #{$ratio});
+      background-image: url(#{$url});
+      background-size: size(#{$url}, #{$ratio});      
+    } @else {
+      width: width(#{$url});
+      height: height(#{$url});
+      background-image: url(#{$url});
+      background-size: size(#{$url});
+    }
+    @content;
+
+  } @else {
+    
+    $width: nth($options, 3) / $ratio;
+    $height: nth($options, 4) / $ratio;
+
+    width: $width;
+    height: $height;
+    background-image: url(#{$url});
+    background-size: $width $height;
+    @content;
+
+  }
+}
+
+
+//== Position
+@mixin position($options...) {
+
+  $len: length($options);
+
+  @if(type-of(nth($options, 1)) == string) {
+    position: nth($options, 1);
+    top: nth($options, 2);
+    right: nth($options, 2);
+    bottom: nth($options, 2);
+    left: nth($options, 2);
+  } @else {
+    position: absolute;
+    top: nth($options, 1);
+    right: nth($options, 1);
+    bottom: nth($options, 1);
+    left: nth($options, 1);
+  }
+}
+
+
+//== Responsive YouTube
+@mixin youtube($width, $height) {
+  position: relative;
+  overflow: hidden;
+  padding-top: percentage($height / $width);
+  @content;
+  iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+//== Placeholder
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    opacity: 1;
+    @content;
+  }
+  &::-moz-placeholder {
+    opacity: 1;
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &:placeholder-shown {
+    @content;
+  }
+}

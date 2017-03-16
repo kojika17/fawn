@@ -1,0 +1,26 @@
+//
+// Variables
+// --------------------------------------------------
+
+//== PostCSS Assets
+$postcss-assets: false !default;
+
+//== Breakpoint
+$screen: (
+  sm: 544px,
+  md: 749px,
+  lg: 992px
+) !default;
+
+
+//== z-index
+$z-map: (
+  front: true,
+  header: true,
+  menu: true,
+  modal: (
+    button,
+    images
+  )
+) !default;
+
