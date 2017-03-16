@@ -1,0 +1,89 @@
+/*!
+ * Fawn
+ * v0.0.1
+ */
+
+.bgsz {
+  width: 50px;
+  height: 100px;
+  background-image: url(./foo.png);
+  background-size: 50px 100px;
+  background-repeat: no-repeat; }
+
+.position-a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.position-b {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.position-c {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px; }
+
+.youtube {
+  position: relative;
+  overflow: hidden;
+  padding-top: 57.14286%; }
+  .youtube iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%; }
+
+input.placeholder::-webkit-input-placeholder {
+  color: #aaa; }
+
+input.placeholder:-moz-placeholder {
+  opacity: 1;
+  color: #aaa; }
+
+input.placeholder::-moz-placeholder {
+  opacity: 1;
+  color: #aaa; }
+
+input.placeholder:-ms-input-placeholder {
+  color: #aaa; }
+
+input.placeholder:placeholder-shown {
+  color: #aaa; }
+
+.header {
+  z-index: 2; }
+
+.modal {
+  z-index: 4; }
+
+.modal-button {
+  z-index: 1; }
+
+@media (min-width: 543px) {
+
+  .mq-screen {
+    content: 'sm min'; } }
+
+@media (max-width: 544px) {
+
+  .mq-screen {
+    content: 'sm'; } }
+
+@media (max-width: 749px) {
+
+  .mq-screen {
+    content: 'md'; } }
+
+@media (max-width: 1208px) {
+
+  .mq-screen {
+    content: 'number'; } }

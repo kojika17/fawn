@@ -1,0 +1,24 @@
+{
+  "name": "fawn",
+  "version": "0.0.1",
+  "description": "Sass Tool Set",
+  "main": "",
+  "scripts": {
+    "start": "gulp"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.3",
+    "browser-sync": "^2.16.0",
+    "css-mqpacker": "^5.0.1",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sass": "^2.3.2",
+    "postcss-assets": "^4.1.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "Android >= 4.1",
+    "iOS >= 8",
+    "ie >= 10"
+  ]
+}
