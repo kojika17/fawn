@@ -1,6 +1,7 @@
 # Fawn
 
-SassやPostCSSで使っていたり、便利そうなのMixinやFunctionを、とりあえずぶち込む
+SassやPostCSSで使っていたり、便利そうなMixinやFunctionを、とりあえずぶち込んだ  
+ドキュメントは、気が向いたら作りたい。気が向いたら...
 
 ## Mixins
 
