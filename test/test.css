@@ -69,8 +69,7 @@ input.placeholder:placeholder-shown {
   z-index: 1; }
 
 .foo {
-  background-image: url(./assets/images/pic.png);
-  background-image: url(pic.png); }
+  background-image: url(./assets/images/pic.png); }
 
 @media (min-width: 543px) {
 

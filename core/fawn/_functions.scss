@@ -3,14 +3,16 @@
 // ================================================
 
 //== Colors
+@function c() {
 
+}
 
 
 //== URL Replacement
 //
 // @debug url('img.png');
 //
-@function url($img-path) {
+@function ur($img-path) {
   $result: $img-path;
   @if($url-replacement) {
     $result: $url-replacement + $img-path;
