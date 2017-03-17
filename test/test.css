@@ -68,6 +68,10 @@ input.placeholder:placeholder-shown {
 .modal-button {
   z-index: 1; }
 
+.foo {
+  background-image: url(./assets/images/pic.png);
+  background-image: url(pic.png); }
+
 @media (min-width: 543px) {
 
   .mq-screen {

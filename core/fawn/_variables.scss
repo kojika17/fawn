@@ -5,6 +5,9 @@
 //== PostCSS Assets
 $postcss-assets: false !default;
 
+//== URL Replacement
+$url-replacement: './assets/images/';
+
 //== Breakpoint
 $screen: (
   sm: 544px,

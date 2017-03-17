@@ -13,4 +13,5 @@ SassやPostCSSで使っていたり、便利そうなMixinやFunctionを、と�
 
 ## Functions
 
+- URL Replacement
 - z-index

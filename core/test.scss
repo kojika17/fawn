@@ -64,6 +64,9 @@ input.placeholder {
 }
 
 
-
+.foo {
+  background-image: url('pic.png');
+  background-image: url(pic.png);
+}
 
 
