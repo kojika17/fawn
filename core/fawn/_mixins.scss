@@ -9,12 +9,68 @@
     $result: $size;
   } @else {
     @each $key, $value in $screen {
-      @if($key == $size) { $result: $value; }
+      @if($key == $size) {
+        $result: $value;
+      }
     }
   }
-  @if($width == min) { $result: $result - 1; }
+  @if($width == min) {
+    $result: $result - 1;
+  }
   @media (#{$width}-width: #{$result}) {
     @content;
+  }
+}
+
+
+//== Media Queries: Only
+@mixin mq-only($options...) {
+
+  $len: length($options);
+
+  $screen-min: 0;
+  $screen-max: 0;
+  $screen-base: nth($options, 1);
+  $screen-range: 0;
+
+  @if($len == 2) {
+    $screen-range: nth($options, 2);
+  }
+
+  $stock: 0;
+  @each $key, $value in $screen {
+    @if($key == $screen-base) {
+      $screen-max: $value;
+      @if($stock > 1) {
+        $screen-min: $stock; 
+      }
+    }
+    @if($key == $screen-range) {
+      $screen-min: $screen-max;
+      $screen-max: $value;
+    }
+
+    $stock: $value;
+  }
+
+  @if(type-of($screen-range) == number) {
+    @if($screen-range > 1) {
+      $screen-min: $screen-max;
+      $screen-max: $screen-range;
+    }
+  }
+  @if(type-of($screen-base) == number) {
+    $screen-min: $screen-base;
+  }
+
+  @if($screen-min == 0) {
+    @media (max-width: #{$screen-max}) {
+      @content;
+    }
+  } @else {
+    @media (min-width: #{$screen-min}) and (max-width: #{$screen-max}) {
+      @content;
+    }
   }
 }
 

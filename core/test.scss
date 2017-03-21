@@ -22,6 +22,24 @@
   }
 }
 
+.only {
+  @include mq-only(sm) {
+    content: 'sm';
+  }
+
+  @include mq-only(sm, md) {
+    content: 'sm, md';
+  }
+
+  @include mq-only(360px, lg) {
+    content: '360px, lg';
+  }
+
+  @include mq-only(440px, 800px) {
+    content: '440px, 800px';
+  }
+
+}
 
 .bgsz {
   @include bgsz('./foo.png', 2, 100px, 200px) {

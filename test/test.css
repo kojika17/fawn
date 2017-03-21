@@ -71,14 +71,32 @@ input.placeholder:placeholder-shown {
 .foo {
   background-image: url(./assets/images/pic.png); }
 
+@media (min-width: 360px) and (max-width: 992px) {
+
+  .only {
+    content: '360px, lg'; } }
+
+@media (min-width: 440px) and (max-width: 800px) {
+
+  .only {
+    content: '440px, 800px'; } }
+
 @media (min-width: 543px) {
 
   .mq-screen {
     content: 'sm min'; } }
 
+@media (min-width: 544px) and (max-width: 749px) {
+
+  .only {
+    content: 'sm, md'; } }
+
 @media (max-width: 544px) {
 
   .mq-screen {
+    content: 'sm'; }
+
+  .only {
     content: 'sm'; } }
 
 @media (max-width: 749px) {
