@@ -27,7 +27,7 @@ gulp.task('bs', function() {
  */
  // CSS
 gulp.task('build:css', function() {
-  return gulp.src('./core/**/*.scss')
+  return gulp.src('./test/*.scss')
     .pipe(sass())
     .pipe(postcss([
       cssMqpacker({ sort: true }),
@@ -44,6 +44,7 @@ gulp.task('build:css', function() {
  */
 gulp.task('watch', function() {
   gulp.watch('./core/**/*.scss', ['build:css']);
+  gulp.watch('./test/*.scss', ['build:css']);
   gulp.watch('./test/*.css').on('change', browserSync.reload);
 });
 
