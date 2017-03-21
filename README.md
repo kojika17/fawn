@@ -6,6 +6,7 @@ SassやPostCSSで使っていたり、便利そうなMixinやFunctionを、と�
 ## Mixins
 
 - Media Queries
+- Media Queries: Only
 - background-size
 - Position
 - YouTube (Responsive)
