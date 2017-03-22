@@ -11,8 +11,10 @@ SassやPostCSSで使っていたり、便利そうなMixinやFunctionを、と�
 - Position
 - YouTube (Responsive)
 - Input Placeholder
+- CSS Outlining（DEBUG）
 
 ## Functions
 
+- Color Management
 - URL Replacement
-- z-index
+- Z-Index Management
