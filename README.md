@@ -11,7 +11,8 @@ SassやPostCSSで使っていたり、便利そうなMixinやFunctionを、と�
 - Position
 - YouTube (Responsive)
 - Input Placeholder
-- CSS Outlining（DEBUG）
+- DEBUG: CSS Outlining
+- (DEBUG: Color Contrast Checker) 
 
 ## Functions
 
