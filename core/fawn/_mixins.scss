@@ -167,3 +167,15 @@
     @content;
   }
 }
+
+
+//== CSS Outlining
+@mixin debug-outlining() {
+  @if($debug-outlining) {
+    * {
+      outline: 2px solid #4A3 !important;
+      box-shadow: 3px 3px 8px #666;
+    }
+  }
+}
+@include debug-outlining();
