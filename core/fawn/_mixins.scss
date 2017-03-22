@@ -179,3 +179,16 @@
   }
 }
 @include debug-outlining();
+
+
+//== Color Contrast Checker
+@mixin debug-contrast($text, $background, $comment: false) {
+
+  $L1: luminance($text) + 0.05;
+  // @debug $L1;
+
+  $L2: luminance($background) + 0.05;
+  // @debug $L2;
+
+  @debug ($L1 / $L2);
+}

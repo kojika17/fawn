@@ -20,7 +20,6 @@
 }
 
 
-
 //== URL Replacement
 @function ur($img-path) {
   $result: $img-path;
@@ -67,4 +66,29 @@
   } 
 
   @return $is-index;
+}
+
+
+//== *sRGB
+@function xsRGB($color) {
+  $xsRGB: $color / 255;
+
+  @if($xsRGB <= 0.03928) {
+    $xsRGB: $xsRGB / 12.92;
+  } @else {
+    $xsRGB: pow((($xsRGB + 0.055) / 1.055), 2.4);
+  }
+  @debug 'xsRGB: #{$xsRGB}';
+
+  @return $xsRGB;
+}
+
+//== Luminance
+@function luminance($color) {
+
+  $R: xsRGB(red($color));
+  $G: xsRGB(green($color));
+  $B: xsRGB(blue($color));
+
+  @return (0.2126 * $R) + (0.7152 * $G) + (0.0722 * $B);
 }
