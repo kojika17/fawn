@@ -3,15 +3,25 @@
 // ================================================
 
 //== Colors
-@function c() {
+@function c($options...) {
+  $color: $colors-map;
+  $option-length: length($options);
 
+  @if($option-length == 1) {
+    $get-key: nth($options, $option-length);
+    @return map-get($color, $get-key);
+  }
+
+  @each $option in $options {
+    $color: map-get($color, $option);
+  }
+
+  @return $color;
 }
 
 
+
 //== URL Replacement
-//
-// @debug url('img.png');
-//
 @function ur($img-path) {
   $result: $img-path;
   @if($url-replacement) {
@@ -24,23 +34,37 @@
 
 
 //== z-index
-//
-// @debug z(header);
-//
-@function z($name, $childname: 0) {
-  $getkey: map-get($z-map, $name);
-  $counter: 1;
-  $is-index: 0;
-  @if $childname != 0 {
-    @return index($getkey, $childname);
+@function z($options...) {
+  $option-length: length($options);
+  $is-index: 1;
+
+  $temp-map: $z-map;
+  $get-key: nth($options, $option-length);
+
+  @if($option-length > 1) {
+    @each $option in $options {
+      @if($option != $get-key) {
+        $temp-map: map-get($temp-map, $option);
+      }
+    }
   }
 
-  @each $map-key, $map-value in $z-map {
-    @if $map-key == $name {
-      $is-index: $counter;
-    }
-    $counter: $counter + 1;
-  }
+  @if($libsass-version > 3.4 or $ruby-sass) {
+
+    $get-value: map-get($temp-map, $get-key);
+    $is-index: index($temp-map, ($get-key $get-value));
+
+  } @else {
+
+    $counter: 1;
+    @each $map-key, $map-value in $temp-map {
+      @if $map-key == $get-key {
+        $is-index: $counter;
+      }
+      $counter: $counter + 1;
+    }    
+
+  } 
 
   @return $is-index;
 }

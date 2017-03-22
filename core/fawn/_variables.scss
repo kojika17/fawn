@@ -2,11 +2,30 @@
 // Variables
 // --------------------------------------------------
 
+//== Sass Version
+$libsass-version: 3.4 !default;
+$ruby-sass: false !default;
+
 //== PostCSS Assets
 $postcss-assets: false !default;
 
 //== URL Replacement
-$url-replacement: './assets/images/';
+$url-replacement: './assets/images/' !default;
+
+//== Colors
+$colors-map: (
+  background: #fff,
+  front: (
+    text: #00e,
+    button: (
+      text: #ffb,
+      background: #00b
+    ),
+    border: #aaa,
+    accent: #ff0
+  )
+) !default;
+
 
 //== Breakpoint
 $screen: (
@@ -22,8 +41,12 @@ $z-map: (
   header: true,
   menu: true,
   modal: (
-    button,
-    images
+    button: true,
+    images: (
+      mask: true,
+      body: true
+    ),
+    close: true
   )
 ) !default;
 

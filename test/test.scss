@@ -77,9 +77,16 @@ input.placeholder {
   z-index: z(modal);
 }
 .modal-button {
-  z-index: z(modal, button);
+  z-index: z(modal, images, body);
 }
 
+.color {
+  background-color: c(background);
+  .button {
+    background-color: c(front, button, background);
+    color: c(front, button, text);
+  }
+}
 
 .foo {
   background-image: ur('pic.png');
