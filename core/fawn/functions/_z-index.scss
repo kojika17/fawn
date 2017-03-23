@@ -1,0 +1,40 @@
+// ================================================
+// * Functions
+// ================================================
+
+//== z-index
+@function z($options...) {
+  $option-length: length($options);
+  $is-index: 1;
+
+  $temp-map: $z-map;
+  $get-key: nth($options, $option-length);
+
+  @if($option-length > 1) {
+    @each $option in $options {
+      @if($option != $get-key) {
+        $temp-map: map-get($temp-map, $option);
+      }
+    }
+  }
+
+  @if($libsass-version > 3.4 or $ruby-sass) {
+
+    $get-value: map-get($temp-map, $get-key);
+    $is-index: index($temp-map, ($get-key $get-value));
+
+  } @else {
+
+    $counter: 1;
+    @each $map-key, $map-value in $temp-map {
+      @if $map-key == $get-key {
+        $is-index: $counter;
+      }
+      $counter: $counter + 1;
+    }    
+
+  } 
+
+  @return $is-index;
+}
+

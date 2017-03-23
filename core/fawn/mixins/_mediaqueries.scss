@@ -1,0 +1,23 @@
+//
+// Mixins
+// --------------------------------------------------
+
+//== Media Queries
+@mixin mq($size, $width: max) {
+  $result: 0;
+  @if(type-of($size) == number) { 
+    $result: $size;
+  } @else {
+    @each $key, $value in $screen {
+      @if($key == $size) {
+        $result: $value;
+      }
+    }
+  }
+  @if($width == min) {
+    $result: $result - 1;
+  }
+  @media (#{$width}-width: #{$result}) {
+    @content;
+  }
+}

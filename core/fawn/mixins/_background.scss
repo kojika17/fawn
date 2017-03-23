@@ -1,0 +1,37 @@
+//
+// Mixins
+// --------------------------------------------------
+
+//== Background
+@mixin bgsz($options...) {
+  $url: nth($options, 1);
+  $ratio: nth($options, 2);
+
+  @if($postcss-assets) {
+
+    @if(nth($options, 2) > 1) {
+      width: width(#{$url}, #{$ratio});
+      height: height(#{$url}, #{$ratio});
+      background-image: url(#{$url});
+      background-size: size(#{$url}, #{$ratio});      
+    } @else {
+      width: width(#{$url});
+      height: height(#{$url});
+      background-image: url(#{$url});
+      background-size: size(#{$url});
+    }
+    @content;
+
+  } @else {
+    
+    $width: nth($options, 3) / $ratio;
+    $height: nth($options, 4) / $ratio;
+
+    width: $width;
+    height: $height;
+    background-image: url(#{$url});
+    background-size: $width $height;
+    @content;
+
+  }
+}

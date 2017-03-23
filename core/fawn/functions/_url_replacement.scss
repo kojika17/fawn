@@ -1,0 +1,13 @@
+// ================================================
+// * Functions
+// ================================================
+
+//== URL Replacement
+@function ur($img-path) {
+  $result: $img-path;
+  @if($url-replacement) {
+    $result: $url-replacement + $img-path;
+  }
+
+  @return url(#{$result});
+}

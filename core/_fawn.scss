@@ -3,7 +3,22 @@
  * v0.0.1
  */
 @import 'fawn/variables';
-@import 'fawn/function_power';
-@import 'fawn/functions';
-@import 'fawn/mixins';
 
+// Functions
+@import 'fawn/functions/color_contrast';
+@import 'fawn/functions/colors';
+@import 'fawn/functions/power';
+@import 'fawn/functions/url_replacement';
+@import 'fawn/functions/z-index';
+
+// Mixins
+@import 'fawn/mixins/background';
+@import 'fawn/mixins/mediaqueries_only';
+@import 'fawn/mixins/mediaqueries';
+@import 'fawn/mixins/placeholder';
+@import 'fawn/mixins/position';
+@import 'fawn/mixins/responsive_youtube';
+
+// Mixins: Debug
+@import 'fawn/mixins/debug/color_contrast_checker';
+@import 'fawn/mixins/debug/css_outlining';

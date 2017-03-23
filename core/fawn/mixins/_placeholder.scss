@@ -1,0 +1,24 @@
+//
+// Mixins
+// --------------------------------------------------
+
+//== Placeholder
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    opacity: 1;
+    @content;
+  }
+  &::-moz-placeholder {
+    opacity: 1;
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &:placeholder-shown {
+    @content;
+  }
+}

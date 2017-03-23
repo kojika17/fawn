@@ -1,0 +1,20 @@
+// ================================================
+// * Functions
+// ================================================
+
+//== Colors
+@function c($options...) {
+  $color: $colors-map;
+  $option-length: length($options);
+
+  @if($option-length == 1) {
+    $get-key: nth($options, $option-length);
+    @return map-get($color, $get-key);
+  }
+
+  @each $option in $options {
+    $color: map-get($color, $option);
+  }
+
+  @return $color;
+}

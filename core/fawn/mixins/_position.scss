@@ -1,0 +1,23 @@
+//
+// Mixins
+// --------------------------------------------------
+
+//== Position
+@mixin position($options...) {
+
+  $len: length($options);
+
+  @if(type-of(nth($options, 1)) == string) {
+    position: nth($options, 1);
+    top: nth($options, 2);
+    right: nth($options, 2);
+    bottom: nth($options, 2);
+    left: nth($options, 2);
+  } @else {
+    position: absolute;
+    top: nth($options, 1);
+    right: nth($options, 1);
+    bottom: nth($options, 1);
+    left: nth($options, 1);
+  }
+}
