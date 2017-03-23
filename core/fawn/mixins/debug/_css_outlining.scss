@@ -5,7 +5,9 @@
 //== CSS Outlining
 @mixin debug-outlining($color: #4A3) {
   @if($debug-outlining) {
-    * {
+    *,
+    *::before,
+    *::after {
       outline: 2px solid $color !important;
       box-shadow: 3px 3px 8px #666;
     }

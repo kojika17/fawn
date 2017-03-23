@@ -1,0 +1,18 @@
+//
+// Mixins
+// --------------------------------------------------
+
+//== Image Replacement
+@mixin image-replacement($type: mir) {
+  @if($type == mir) {
+    overflow: hidden;
+    text-indent: -9999px;
+  } @else if($type == skm) {
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+  } @else if($type == hidden) {
+    position: absolute;
+    clip: rect(0 0 0 0);
+  }
+}
