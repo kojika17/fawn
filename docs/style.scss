@@ -1,0 +1,19 @@
+//
+// Documents 
+// --------------------------------------------------
+@import '../core/fawn';
+
+body {
+  max-width: 32em;
+  margin: auto;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.68;
+}
+h1 {
+  font-size: 3.5em;
+  letter-spacing: 0.1em;
+  color: #f58;
+  @include debug-contrast(#f58, #fff, true, logo);
+}

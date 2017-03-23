@@ -16,7 +16,7 @@ var browserSync  = require('browser-sync').create();
 gulp.task('bs', function() {
   browserSync.init({
     server: {
-        baseDir: './'
+        baseDir: './docs/'
     }
   });
 });
@@ -27,7 +27,7 @@ gulp.task('bs', function() {
  */
  // CSS
 gulp.task('build:css', function() {
-  return gulp.src('./test/*.scss')
+  gulp.src('./test/*.scss')
     .pipe(sass())
     .pipe(postcss([
       cssMqpacker({ sort: true }),
@@ -36,16 +36,26 @@ gulp.task('build:css', function() {
       //   loadPaths: ['static/']
       // })
     ]))
-    .pipe(gulp.dest('./test'));
+    .pipe(gulp.dest('./test/'));
+
+  gulp.src('./docs/*.scss')
+    .pipe(sass())
+    .pipe(postcss([
+      cssMqpacker({ sort: true }),
+      autoprefixer(),
+      // assets({
+      //   loadPaths: ['static/']
+      // })
+    ]))
+    .pipe(gulp.dest('./docs/'));
 });
 
 /**
  * Watch
  */
 gulp.task('watch', function() {
-  gulp.watch('./core/**/*.scss', ['build:css']);
-  gulp.watch('./test/*.scss', ['build:css']);
-  gulp.watch('./test/*.css').on('change', browserSync.reload);
+  gulp.watch(['./test/*.scss', './docs/*.scss'], ['build:css']);
+  gulp.watch(['./{test, docs}/*.{css, html}']).on('change', browserSync.reload);
 });
 
 
