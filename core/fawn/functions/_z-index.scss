@@ -5,6 +5,7 @@
 //== z-index
 @function z($options...) {
   $option-length: length($options);
+  $point: 1;
   $is-index: 1;
 
   $temp-map: $z-map;
@@ -18,22 +19,25 @@
     }
   }
 
-  @if($libsass-version > 3.4 or $ruby-sass) {
+  @if(($libsass-version > 3.4 or $ruby-sass) and not $z-map-reverse) {
 
     $get-value: map-get($temp-map, $get-key);
     $is-index: index($temp-map, ($get-key $get-value));
 
   } @else {
-
     $counter: 1;
+    @if ($z-map-reverse) {
+      $counter: length($temp-map);
+      $point: -1;
+    }
+
     @each $map-key, $map-value in $temp-map {
       @if $map-key == $get-key {
         $is-index: $counter;
       }
-      $counter: $counter + 1;
-    }    
-
-  } 
+      $counter: $counter + $point;
+    }
+  }
 
   @return $is-index;
 }

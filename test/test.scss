@@ -83,7 +83,7 @@ input.placeholder {
   z-index: z(modal);
 }
 .modal-button {
-  z-index: z(modal, images, body);
+  z-index: z(modal, images, mask);
 }
 
 .color {
