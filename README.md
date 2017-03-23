@@ -12,7 +12,7 @@ SassやPostCSSで使っていたり、便利そうなMixinやFunctionを、と�
 - YouTube (Responsive)
 - Input Placeholder
 - DEBUG: CSS Outlining
-- (DEBUG: Color Contrast Checker) 
+- DEBUG: Color Contrast Checker
 
 ## Functions
 
