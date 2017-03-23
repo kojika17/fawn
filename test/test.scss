@@ -4,6 +4,12 @@
 @import '../core/fawn';
 
 // Test
+@include debug-contrast(#666, #fff, false, 'header');
+.header .area {
+  @include debug-contrast(#888, #fff);
+}
+
+
 .mq-screen {
   @include mq(sm) {
     content: 'sm';

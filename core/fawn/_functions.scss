@@ -71,6 +71,7 @@
 
 //== *sRGB
 @function xsRGB($color) {
+
   $xsRGB: $color / 255;
 
   @if($xsRGB <= 0.03928) {
@@ -78,7 +79,6 @@
   } @else {
     $xsRGB: pow((($xsRGB + 0.055) / 1.055), 2.4);
   }
-  @debug 'xsRGB: #{$xsRGB}';
 
   @return $xsRGB;
 }
@@ -92,3 +92,5 @@
 
   @return (0.2126 * $R) + (0.7152 * $G) + (0.0722 * $B);
 }
+
+

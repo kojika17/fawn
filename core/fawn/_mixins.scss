@@ -170,10 +170,10 @@
 
 
 //== CSS Outlining
-@mixin debug-outlining() {
+@mixin debug-outlining($color: #4A3) {
   @if($debug-outlining) {
     * {
-      outline: 2px solid #4A3 !important;
+      outline: 2px solid $color !important;
       box-shadow: 3px 3px 8px #666;
     }
   }
@@ -182,13 +182,39 @@
 
 
 //== Color Contrast Checker
-@mixin debug-contrast($text, $background, $comment: false) {
+@mixin debug-contrast($color1, $color2, $large-text: false,$comment: false) {
+  $user-comment: '';
+  $user-selector: '';
+  $contrast-ratio: 0;
+  $level: 'FAIL';
+  $L1: luminance($color1) + 0.05;
+  $L2: luminance($color2) + 0.05;
 
-  $L1: luminance($text) + 0.05;
-  // @debug $L1;
+  @if($comment) {
+    $user-comment: '#{$comment}\a ';
+  }
+  @if(&) {
+    $user-selector: 'Selector: #{&}\a ';
+  }
 
-  $L2: luminance($background) + 0.05;
-  // @debug $L2;
+  @if($L1 > $L2) {
+    $contrast-ratio: $L1 / $L2;
+  } @else {
+    $contrast-ratio: $L2 / $L1;
+  }
 
-  @debug ($L1 / $L2);
+  @if($large-text) {
+    @if($contrast-ratio >= 4.5) {
+      $level: 'AAA';
+    } @else if($contrast-ratio >= 3) {
+      $level: 'AA';
+    }
+  } @else {
+    @if($contrast-ratio >= 7) {
+      $level: 'AAA';
+    } @else if($contrast-ratio >= 4.5) {
+      $level: 'AA';
+    }
+  }
+  @debug '===\a #{$user-comment}#{$user-selector}Contrast: #{$contrast-ratio}:1\a Level: #{$level}\a ===';
 }
