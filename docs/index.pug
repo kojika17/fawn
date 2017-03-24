@@ -49,7 +49,8 @@ html(lang='ja')
 
       ### Media Queries
 
-      メディアクエリーを設定できます。
+      メディアクエリーを簡単に設定できます。  
+      そのまま利用すると同じ@mediaルールが乱立してしまうので、[node-css-mqpacker](https://github.com/hail2u/node-css-mqpacker)といったメディアクエリーをまとめるプラグインなどと併用して使用してください。
 
       ```scss
       @include mq($size, $width: max) {...}

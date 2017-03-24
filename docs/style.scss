@@ -17,15 +17,23 @@ h1 {
   color: #d77b1c;
   @include debug-contrast(#d77b1c, #fff, true, logo);
 }
+h2, h3, h4, h5 {
+  margin-top: 4em;
+}
 table {
   width: 100%;
   border-collapse: collapse;
+  margin: 1em 0;
   font-size: 14px;
   th, td {
     padding: 1em 0.5em;
+    &:nth-child(even) {
+      background-color: #efefef;
+    }
   }
   th {
-    border-bottom: 1px solid #aaa;
+    border: solid #aaa;
+    border-width: 2px 0;
     text-align: left;
   }
   td {
@@ -35,7 +43,5 @@ table {
 
 hr {
   height: 1px;
-  margin: 4em 0;
   border: 0;
-  background-color: #d77b1c;
 }
