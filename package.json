@@ -12,6 +12,7 @@
     "css-mqpacker": "^5.0.1",
     "gulp": "^3.9.1",
     "gulp-postcss": "^6.2.0",
+    "gulp-pug": "^3.3.0",
     "gulp-sass": "^2.3.2",
     "postcss-assets": "^4.1.0"
   },
@@ -20,5 +21,8 @@
     "Android >= 4.1",
     "iOS >= 8",
     "ie >= 10"
-  ]
+  ],
+  "dependencies": {
+    "jstransformer-markdown-it": "^2.0.0"
+  }
 }
