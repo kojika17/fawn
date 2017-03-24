@@ -4,16 +4,38 @@
 @import '../core/fawn';
 
 body {
-  max-width: 32em;
+  max-width: 48em;
   margin: auto;
-  font-family: 'Quicksand', sans-serif;
+  padding: 0 2em;
   font-weight: 300;
-  font-size: 16px;
   line-height: 1.68;
 }
 h1 {
   font-size: 3.5em;
   letter-spacing: 0.1em;
-  color: #f58;
-  @include debug-contrast(#f58, #fff, true, logo);
+  font-family: 'Quicksand', sans-serif;
+  color: #d77b1c;
+  @include debug-contrast(#d77b1c, #fff, true, logo);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  th, td {
+    padding: 1em 0.5em;
+  }
+  th {
+    border-bottom: 1px solid #aaa;
+    text-align: left;
+  }
+  td {
+    border-bottom: 1px solid #bbb;
+  }
+}
+
+hr {
+  height: 1px;
+  margin: 4em 0;
+  border: 0;
+  background-color: #d77b1c;
 }

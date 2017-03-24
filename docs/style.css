@@ -3,14 +3,32 @@
  * v0.0.1
  */
 body {
-  max-width: 32em;
+  max-width: 48em;
   margin: auto;
-  font-family: 'Quicksand', sans-serif;
+  padding: 0 2em;
   font-weight: 300;
-  font-size: 16px;
   line-height: 1.68; }
 
 h1 {
   font-size: 3.5em;
   letter-spacing: 0.1em;
-  color: #f58; }
+  font-family: 'Quicksand', sans-serif;
+  color: #d77b1c; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px; }
+  table th, table td {
+    padding: 1em 0.5em; }
+  table th {
+    border-bottom: 1px solid #aaa;
+    text-align: left; }
+  table td {
+    border-bottom: 1px solid #bbb; }
+
+hr {
+  height: 1px;
+  margin: 4em 0;
+  border: 0;
+  background-color: #d77b1c; }

@@ -17,6 +17,24 @@ html(lang='ja')
       - [node-css-mqpacker](https://github.com/hail2u/node-css-mqpacker)
       - [postcss-assets](https://github.com/borodean/postcss-assets)
 
+      ## Variables
+
+      変数を変更して出力の結果を変更できます。
+
+      | Variables | Type | Defalut | Description |
+      | --- | --- | --- | --- |
+      | $libsass-version | Number | 3.4 | libSassのバージョンを指定します。そのままでも問題ありません。 |
+      | $ruby-sass | Boolean | false | RubyのSassを使っているか指定します。そのままでも問題ありません。 |
+      | $postcss-assets | Boolean | false | postcss-assetsを使っているか指定します。 |
+      | $url-replacement | String | './assets/images/' | 画像を保存しているパスを指定します。 |
+      | $colors-map | Map | - | キーにキーワード、値に色を指定します。入れ子もできます。 |
+      | $screen | Map | - | ブレイクポイントを指定します。 |
+      | $z-map-reverse | Boolean | false | $z-mapのMapの順序を逆にします。 |
+      | $z-map | Map | - | z-indexの順序を指定します。キーにキーワード、値はなんでもいいので文字列を入れてください。 |
+      | $debug-outlining | Boolean | false | デバッグ用にアウトラインを表示するか。 |
+
+      ---
+
       ## Mixins
 
       - Media Queries
@@ -32,4 +50,45 @@ html(lang='ja')
       ### Media Queries
 
       メディアクエリーを設定できます。
+
+      ```scss
+      @include mq($size, $width: max) {...}
+      ```
+
+      | Name | Type | Defalut | Description |
+      | --- | --- | --- | --- |
+      | $size | String or Number | - | メディアクエリーのサイズ。引数には$screen変数のキーか数値を直接指定します。 |
+      | $width | String | max | max か minを指定。 |
+
+      #### 関連する変数
+
+      ```scss
+      $screen: (
+        sm: 544px,
+        md: 749px,
+        lg: 992px
+      ) !default;
+      ```
+
+      #### Example
+
+      ```scss
+      .foo {
+        @include mq(sm) {
+          content: 'max-width: 544px';
+        }
+        @include mq(md, min) {
+          content: 'min-width: 748px';
+        }
+        @include mq(1200px) {
+          content: 'max-width: 1200px';
+        }
+        @include mq(1200px, min) {
+          content: 'max-width: 1199px';
+        }
+      }
+      ```
+
+
+
 

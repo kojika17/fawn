@@ -6,6 +6,75 @@
 <li><a href="https://github.com/hail2u/node-css-mqpacker">node-css-mqpacker</a></li>
 <li><a href="https://github.com/borodean/postcss-assets">postcss-assets</a></li>
 </ul>
+<h2>Variables</h2>
+<p>変数を変更して出力の結果を変更できます。</p>
+<table>
+<thead>
+<tr>
+<th>Variables</th>
+<th>Type</th>
+<th>Defalut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$libsass-version</td>
+<td>Number</td>
+<td>3.4</td>
+<td>libSassのバージョンを指定します。そのままでも問題ありません。</td>
+</tr>
+<tr>
+<td>$ruby-sass</td>
+<td>Boolean</td>
+<td>false</td>
+<td>RubyのSassを使っているか指定します。そのままでも問題ありません。</td>
+</tr>
+<tr>
+<td>$postcss-assets</td>
+<td>Boolean</td>
+<td>false</td>
+<td>postcss-assetsを使っているか指定します。</td>
+</tr>
+<tr>
+<td>$url-replacement</td>
+<td>String</td>
+<td>'./assets/images/'</td>
+<td>画像を保存しているパスを指定します。</td>
+</tr>
+<tr>
+<td>$colors-map</td>
+<td>Map</td>
+<td>-</td>
+<td>キーにキーワード、値に色を指定します。入れ子もできます。</td>
+</tr>
+<tr>
+<td>$screen</td>
+<td>Map</td>
+<td>-</td>
+<td>ブレイクポイントを指定します。</td>
+</tr>
+<tr>
+<td>$z-map-reverse</td>
+<td>Boolean</td>
+<td>false</td>
+<td>$z-mapのMapの順序を逆にします。</td>
+</tr>
+<tr>
+<td>$z-map</td>
+<td>Map</td>
+<td>-</td>
+<td>z-indexの順序を指定します。キーにキーワード、値はなんでもいいので文字列を入れてください。</td>
+</tr>
+<tr>
+<td>$debug-outlining</td>
+<td>Boolean</td>
+<td>false</td>
+<td>デバッグ用にアウトラインを表示するか。</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <h2>Mixins</h2>
 <ul>
 <li>Media Queries</li>
@@ -20,4 +89,53 @@
 </ul>
 <h3>Media Queries</h3>
 <p>メディアクエリーを設定できます。</p>
+<pre><code class="highlight-scss">@include mq($size, $width: max) {...}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Defalut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$size</td>
+<td>String or Number</td>
+<td>-</td>
+<td>メディアクエリーのサイズ。引数には$screen変数のキーか数値を直接指定します。</td>
+</tr>
+<tr>
+<td>$width</td>
+<td>String</td>
+<td>max</td>
+<td>max か minを指定。</td>
+</tr>
+</tbody>
+</table>
+<h4>関連する変数</h4>
+<pre><code class="highlight-scss">$screen: (
+  sm: 544px,
+  md: 749px,
+  lg: 992px
+) !default;
+</code></pre>
+<h4>Example</h4>
+<pre><code class="highlight-scss">.foo {
+  @include mq(sm) {
+    content: 'max-width: 544px';
+  }
+  @include mq(md, min) {
+    content: 'min-width: 748px';
+  }
+  @include mq(1200px) {
+    content: 'max-width: 1200px';
+  }
+  @include mq(1200px, min) {
+    content: 'max-width: 1199px';
+  }
+}
+</code></pre>
 </body></html>
