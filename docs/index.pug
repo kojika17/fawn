@@ -58,7 +58,7 @@ html(lang='ja')
 
       | Name | Type | Defalut | Description |
       | --- | --- | --- | --- |
-      | $size | String or Number | - | メディアクエリーのサイズ。引数には$screen変数のキーか数値を直接指定します。 |
+      | $size | String or Number | - | メディアクエリーのサイズ。$screen変数のキーか数値をpxで指定します。 |
       | $width | String | max | max か minを指定。 |
 
       #### 関連する変数
@@ -90,6 +90,50 @@ html(lang='ja')
       }
       ```
 
+      ### Media Queries: Only
+
+      メディアクエリーの範囲を指定します。
+
+      ```scss
+      @mixin mq-only($min-width, $max-width) { ... }
+      ```
+
+      | Name | Type | Defalut | Description |
+      | --- | --- | --- | --- |
+      | $min-width | String or Number | - | 最小幅を指定します。$screen変数のキーか数値をpxで指定します。省略も可能です。 |
+      | $max-width | String or Number | - | 最大幅を指定します。$max-widthの値を省略してキーを指定すると、一つ前のキーが$min-widthになります。 |
+
+      #### 関連する変数
+
+      ```scss
+      $screen: (
+        sm: 544px,
+        md: 749px,
+        lg: 992px
+      ) !default;
+      ```
+
+      #### Example
+
+      ```scss
+      .foo {
+        @include mq-only(sm) {
+          content: '';
+        }
+        @include mq-only(md) {
+          content: '';
+        }
+        @include mq(sm, lg) {
+          content: '';
+        }
+        @include mq(300px, md) {
+          content: '';
+        }
+        @include mq(890px, 1200px) {
+          content: '';
+        }
+      }
+      ```
 
 
 

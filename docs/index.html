@@ -106,7 +106,7 @@
 <td>$size</td>
 <td>String or Number</td>
 <td>-</td>
-<td>メディアクエリーのサイズ。引数には$screen変数のキーか数値を直接指定します。</td>
+<td>メディアクエリーのサイズ。$screen変数のキーか数値をpxで指定します。</td>
 </tr>
 <tr>
 <td>$width</td>
@@ -136,6 +136,60 @@
   }
   @include mq(1200px, min) {
     content: 'max-width: 1199px';
+  }
+}
+</code></pre>
+<h3>Media Queries: Only</h3>
+<p>メディアクエリーの範囲を指定します。</p>
+<pre><code class="highlight-scss">@mixin mq-only($min-width, $max-width) { ... }
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Defalut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$min-width</td>
+<td>String or Number</td>
+<td>-</td>
+<td>最小幅を指定します。$screen変数のキーか数値をpxで指定します。省略も可能です。</td>
+</tr>
+<tr>
+<td>$max-width</td>
+<td>String or Number</td>
+<td>-</td>
+<td>最大幅を指定します。$max-widthの値を省略してキーを指定すると、一つ前のキーが$min-widthになります。</td>
+</tr>
+</tbody>
+</table>
+<h4>関連する変数</h4>
+<pre><code class="highlight-scss">$screen: (
+  sm: 544px,
+  md: 749px,
+  lg: 992px
+) !default;
+</code></pre>
+<h4>Example</h4>
+<pre><code class="highlight-scss">.foo {
+  @include mq-only(sm) {
+    content: '';
+  }
+  @include mq-only(md) {
+    content: '';
+  }
+  @include mq(sm, lg) {
+    content: '';
+  }
+  @include mq(300px, md) {
+    content: '';
+  }
+  @include mq(890px, 1200px) {
+    content: '';
   }
 }
 </code></pre>
