@@ -1,0 +1,26 @@
+// ================================================
+// * Functions
+// ================================================
+
+//== Zero Padding
+@function zero($value, $digits) {
+  $result: $value + '';
+
+  @if(str-length($result) >= $digits) {
+    @return $result;
+  }
+
+  $zero: '';
+  @for $i from 1 through $digits {
+    $zero: $zero + '0';
+  }
+  
+  $result: $zero + $result;
+
+  $result-length: str-length($result);
+  $result-slice: $result-length - $digits + 1;
+
+  $result: str-slice($result, $result-slice, $result-length);
+
+  @return $result;
+}
