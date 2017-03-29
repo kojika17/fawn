@@ -95,7 +95,7 @@ html(lang='ja')
       メディアクエリーの範囲を指定します。
 
       ```scss
-      @mixin mq-only($min-width, $max-width) { ... }
+      @include mq-only($min-width, $max-width) { ... }
       ```
 
       | Name | Type | Defalut | Description |
@@ -135,5 +135,51 @@ html(lang='ja')
       }
       ```
 
+      ### Background Size
 
+      background-sizeの指定やwidth、heightをまとめて出力できます。
+      またpostcss-assetsに対応しており、変数を有効化すると画像パスを入れるだけで画像サイズなどを出力します。
 
+      ```scss
+      @include bgsz($image-path, $pixel-ratio, $image-width, $image-height, $background-only) { ... }
+
+      // postcss-assetsを有効
+      @include bgsz($image-path, $ratio, $background-only) { ... }
+      ```
+
+      | Name | Type | Defalut | Description |
+      | --- | --- | --- | --- |
+      | $image-path | String | - | シングルクォーテーションかダブルクォーテーションで囲み、画像パスを指定します。 |
+      | $pixel-ratio | Number | 1 | デバイス・ピクセル比を指定します。元画像の横幅と高さを指定した数値で割ります。 |
+      | $image-width | Number | - | 画像の横幅を指定します。postcss-assetsが有効な場合は不要です。 |
+      | $image-height | Number | - | 画像の高さを指定します。postcss-assetsが有効な場合は不要です。 |
+      | $background-only | Boolean | false | background-imageとbackground-sizeのみを出力します。省略可。 |
+
+      #### 関連する変数
+
+      ```scss
+      $postcss-assets: false !default;
+      ```
+
+      #### Example
+
+      ```scss
+      .foo {
+        @include bgsz('./images/icon.png', 1, 40px, 40px);
+
+        @include bgsz('./images/icon.png', 2, 40px, 40px, false) {
+          background-repeat: none;
+          background-position: 50% 50%;
+        }      
+      }
+
+      // postcss-assetsあり
+      .foo {
+        @include bgsz('./images/icon.png');
+
+        @include bgsz('./images/icon.png', 2, false) {
+          background-repeat: none;
+          background-position: 50% 50%;
+        }
+      }
+      ```
