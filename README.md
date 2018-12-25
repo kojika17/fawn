@@ -5,19 +5,24 @@ SassやPostCSSで使っていたり、便利そうなMixinやFunctionを、と�
 
 ## Mixins
 
+- Background Size
+- Fuild Size
+- Image Replacement
+- Input Placeholder
 - Media Queries
 - Media Queries: Only
-- Background Size
 - Position
 - YouTube (Responsive)
-- Input Placeholder
-- Image Replacement
-- DEBUG: CSS Outlining
+
 - DEBUG: Color Contrast Checker
+- DEBUG: CSS Outlining
 
 ## Functions
 
 - Color Management
+- Px 2 Em
+- Px 2 Rem
+- Strip Unit
 - URL Replacement
 - Z-Index Management
 - Zero Padding
