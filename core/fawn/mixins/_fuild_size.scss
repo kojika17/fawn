@@ -1,0 +1,63 @@
+//
+// Mixins
+// --------------------------------------------------
+
+/// 特定のviewport間のサイズを柔軟に変化させる
+///
+/// @group Global
+///
+/// @param {Number} $max-font-size - 最大値のフォントサイズ(単位: px)
+/// @param {Number} $min-font-size - 最小値のフォントサイズ(単位: px)
+/// @param {Number or String} $max-viewport - 最大値のメディアクエリー
+/// @param {Number or String} $min-viewport - 最小値のメディアクエリー
+///
+/// @example scss
+///   .fuild {
+///     @include flsz(24px, 12px, lg, sm);
+///   }
+///   .fuild2 {
+///     @include flsz(24px, 14px, lg, 500px);
+///   }
+@mixin flsz($max-font-size, $min-font-size, $max-viewport, $min-viewport, $propaty: 'font-size', $px2rem: false) {
+  
+  $maxvw: 0;
+  $minvw: 0;
+
+  @if(type-of($max-viewport) == number) {
+    $maxvw: $max-viewport;
+  }
+  @if(type-of($min-viewport) == number) {
+    $minvw: $min-viewport;
+  }
+
+  @each $key, $value in $screen {
+    @if(($key == $max-viewport) and ($maxvw == 0)) {
+      $maxvw: $value;
+    }
+    @if(($key == $min-viewport) and ($minvw == 0)) {
+      $minvw: $value;
+    }
+  }
+
+  $minvw: $minvw - 1;
+
+  $x: $minvw / 100;
+  $y: 100 * ($max-font-size - $min-font-size) / ($maxvw - $minvw);
+  $z: $min-font-size;
+
+  @if($px2rem) {
+    $z: px2rem($z);
+  }
+
+  #{$propaty}: $z;
+
+  $maxmq: px2em($maxvw);
+  $minmq: px2em($minvw);
+
+  @media (min-width: #{$minmq}) {
+    #{$propaty}: calc(#{$z} + ((1vw - #{$x}) * #{strip-unit($y)}));
+  }
+  @media (max-width: #{$maxmq}) {
+    #{$propaty}: $max-font-size;
+  }
+}

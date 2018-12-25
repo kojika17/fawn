@@ -77,6 +77,12 @@ input.placeholder:placeholder-shown {
 .foo {
   background-image: url(./assets/images/pic.png); }
 
+.fuild {
+  font-size: 12px; }
+
+.fuild2 {
+  font-size: 14px; }
+
 @media (min-width: 22.5em) and (max-width: 62em) {
 
   .only {
@@ -87,10 +93,18 @@ input.placeholder:placeholder-shown {
   .only {
     content: '440px, 800px'; } }
 
+@media (min-width: 31.1875em) {
+
+  .fuild2 {
+    font-size: calc(14px + ((1vw - 4.99px) * 2.0284)); } }
+
 @media (min-width: 33.9375em) {
 
   .mq-screen {
-    content: 'sm min'; } }
+    content: 'sm min'; }
+
+  .fuild {
+    font-size: calc(12px + ((1vw - 5.43px) * 2.67261)); } }
 
 @media (min-width: 34em) and (max-width: 46.8125em) {
 
@@ -114,3 +128,11 @@ input.placeholder:placeholder-shown {
 
   .mq-screen {
     content: 'number'; } }
+
+@media (max-width: 62em) {
+
+  .fuild {
+    font-size: 24px; }
+
+  .fuild2 {
+    font-size: 24px; } }
