@@ -2,12 +2,8 @@
 // Variables
 // --------------------------------------------------
 
-//== Sass Version
-$libsass-version: 3.4 !default;
-$ruby-sass: false !default;
-
-//== PostCSS Assets
-$postcss-assets: false !default;
+//== CSS Default Font Size
+$css-default-font-size: 16px;
 
 //== URL Replacement
 $url-replacement: './assets/images/' !default;
@@ -54,3 +50,6 @@ $z-map: (
 
 //== DEBUG: CSS Outlining
 $debug-outlining: false !default;
+
+//== PostCSS Assets
+$postcss-assets: false !default;

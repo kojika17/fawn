@@ -19,7 +19,7 @@
     }
   }
 
-  @if(($libsass-version > 3.4 or $ruby-sass) and not $z-map-reverse) {
+  @if(not $z-map-reverse) {
 
     $get-value: map-get($temp-map, $get-key);
     $is-index: index($temp-map, ($get-key $get-value));
