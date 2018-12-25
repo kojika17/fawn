@@ -77,27 +77,27 @@ input.placeholder:placeholder-shown {
 .foo {
   background-image: url(./assets/images/pic.png); }
 
-@media (min-width: 360px) and (max-width: 992px) {
+@media (min-width: 22.5em) and (max-width: 62em) {
 
   .only {
     content: '360px, lg'; } }
 
-@media (min-width: 440px) and (max-width: 800px) {
+@media (min-width: 27.5em) and (max-width: 50em) {
 
   .only {
     content: '440px, 800px'; } }
 
-@media (min-width: 543px) {
+@media (min-width: 33.9375em) {
 
   .mq-screen {
     content: 'sm min'; } }
 
-@media (min-width: 544px) and (max-width: 749px) {
+@media (min-width: 34em) and (max-width: 46.8125em) {
 
   .only {
     content: 'sm, md'; } }
 
-@media (max-width: 544px) {
+@media (max-width: 34em) {
 
   .mq-screen {
     content: 'sm'; }
@@ -105,12 +105,12 @@ input.placeholder:placeholder-shown {
   .only {
     content: 'sm'; } }
 
-@media (max-width: 749px) {
+@media (max-width: 46.8125em) {
 
   .mq-screen {
     content: 'md'; } }
 
-@media (max-width: 1208px) {
+@media (max-width: 75.5em) {
 
   .mq-screen {
     content: 'number'; } }

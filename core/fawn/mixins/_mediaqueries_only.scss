@@ -43,11 +43,11 @@
   }
 
   @if($screen-min == 0) {
-    @media (max-width: #{$screen-max}) {
+    @media (max-width: #{px2em($screen-max)}) {
       @content;
     }
   } @else {
-    @media (min-width: #{$screen-min}) and (max-width: #{$screen-max}) {
+    @media (min-width: #{px2em($screen-min)}) and (max-width: #{px2em($screen-max)}) {
       @content;
     }
   }
