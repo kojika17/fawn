@@ -30,5 +30,5 @@ SassやPostCSSで使っていたり、便利そうなMixinやFunctionを、と�
 
 # Credits
 
-[xi/SassMeister-input.scss (power function)](https://gist.github.com/xi/5bbe8480c48e2fc10ab5)
-[Fluid\-responsive font\-size calculator](https://websemantics.uk/tools/responsive-font-calculator/)
+- [xi/SassMeister-input.scss (power function)](https://gist.github.com/xi/5bbe8480c48e2fc10ab5)
+- [Fluid\-responsive font\-size calculator](https://websemantics.uk/tools/responsive-font-calculator/)
