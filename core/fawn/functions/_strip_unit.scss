@@ -1,0 +1,21 @@
+// ================================================
+// * Functions
+// ================================================
+
+/// 数値から単位を除外
+///
+/// @group Global
+///
+/// @param {Number} $number - 数値
+///
+/// @example scss
+///   @mixin() {
+///     content: strip-unit(14px); // 14
+///   }
+@function strip-unit($number) {
+  @if (type-of($number) == 'number' and not unitless($number)) {
+    @return $number;
+  }
+
+  @return $number / ($number * 0 + 1);
+}

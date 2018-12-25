@@ -1,0 +1,27 @@
+// ================================================
+// * Functions
+// ================================================
+
+/// `px` から `rem` に変換
+///
+/// @group Global
+///
+/// @param {Number} $number - 単位付き数値
+///
+/// @example scss
+///   @mixin() {
+///     content: px2rem(16px); // 1rem
+///     content: px2rem(50%); // 50%
+///   }
+@function px2rem($number) {
+  $result: $number;
+
+  // 単位がpx以外なら値をそのまま返す
+  @if (not(unit($number) == 'px')) {
+    @return $result;
+  }
+
+  $result: strip-unit($number / $css-default-font-size) * 1rem;
+
+  @return $result;
+}
