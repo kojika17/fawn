@@ -12,7 +12,7 @@
     "css-mqpacker": "^5.0.1",
     "gulp": "^3.9.1",
     "gulp-postcss": "^6.2.0",
-    "gulp-sass": "^2.3.2",
+    "gulp-sass": "^4.0.2",
     "postcss-assets": "^4.1.0"
   },
   "browserslist": [
