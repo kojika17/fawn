@@ -103,4 +103,5 @@ input.placeholder {
 }
 .fluid2 {
   @include flsz(24px, 14px, lg, 500px);
+  content: '#{px2em(12px, 18px)}';
 }

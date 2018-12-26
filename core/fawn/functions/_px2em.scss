@@ -7,13 +7,14 @@
 /// @group Global
 ///
 /// @param {Number} $number - 単位付き数値
+/// @param {Number} $parent-number - 親の単位付き数値
 ///
 /// @example scss
 ///   @mixin() {
 ///     content: px2em(16px); // 1em
 ///     content: px2em(50%); // 50%
 ///   }
-@function px2em($number) {
+@function px2em($number, $parent-number: $css-default-font-size) {
   $result: $number;
 
   // 単位がpx以外なら値をそのまま返す
@@ -21,7 +22,7 @@
     @return $result;
   }
 
-  $result: strip-unit($number / $css-default-font-size) * 1em;
+  $result: strip-unit($number / $parent-number) * 1em;
 
   @return $result;
 }

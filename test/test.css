@@ -81,7 +81,8 @@ input.placeholder:placeholder-shown {
   font-size: 12px; }
 
 .fluid2 {
-  font-size: 14px; }
+  font-size: 14px;
+  content: "0.66667em"; }
 
 @media (min-width: 22.5em) and (max-width: 62em) {
 
