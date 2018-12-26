@@ -12,10 +12,10 @@
 /// @param {Number or String} $min-viewport - 最小値のメディアクエリー
 ///
 /// @example scss
-///   .fuild {
+///   .fluid {
 ///     @include flsz(24px, 12px, lg, sm);
 ///   }
-///   .fuild2 {
+///   .fluid2 {
 ///     @include flsz(24px, 14px, lg, 500px);
 ///   }
 @mixin flsz($max-font-size, $min-font-size, $max-viewport, $min-viewport, $propaty: 'font-size', $px2rem: false) {
@@ -51,13 +51,13 @@
 
   #{$propaty}: $z;
 
-  $maxmq: px2em($maxvw);
-  $minmq: px2em($minvw);
+  $maxmq: px2em($maxvw - 1);
+  $minmq: px2em($minvw - 1);
 
   @media (min-width: #{$minmq}) {
     #{$propaty}: calc(#{$z} + ((1vw - #{$x}) * #{strip-unit($y)}));
   }
-  @media (max-width: #{$maxmq}) {
+  @media (min-width: #{$maxmq}) {
     #{$propaty}: $max-font-size;
   }
 }

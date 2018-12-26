@@ -98,9 +98,9 @@ input.placeholder {
   background-image: ur('pic.png');
 }
 
-.fuild {
+.fluid {
   @include flsz(24px, 12px, lg, sm);
 }
-.fuild2 {
+.fluid2 {
   @include flsz(24px, 14px, lg, 500px);
 }

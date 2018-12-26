@@ -6,7 +6,7 @@ SassやPostCSSで使っていたり、便利そうなMixinやFunctionを、と�
 ## Mixins
 
 - Background Size
-- Fuild Size
+- Fluid Size
 - Image Replacement
 - Input Placeholder
 - Media Queries

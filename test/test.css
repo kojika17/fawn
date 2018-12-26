@@ -77,10 +77,10 @@ input.placeholder:placeholder-shown {
 .foo {
   background-image: url(./assets/images/pic.png); }
 
-.fuild {
+.fluid {
   font-size: 12px; }
 
-.fuild2 {
+.fluid2 {
   font-size: 14px; }
 
 @media (min-width: 22.5em) and (max-width: 62em) {
@@ -93,23 +93,33 @@ input.placeholder:placeholder-shown {
   .only {
     content: '440px, 800px'; } }
 
-@media (min-width: 31.1875em) {
+@media (min-width: 31.125em) {
 
-  .fuild2 {
+  .fluid2 {
     font-size: calc(14px + ((1vw - 4.99px) * 2.0284)); } }
+
+@media (min-width: 33.875em) {
+
+  .fluid {
+    font-size: calc(12px + ((1vw - 5.43px) * 2.67261)); } }
 
 @media (min-width: 33.9375em) {
 
   .mq-screen {
-    content: 'sm min'; }
-
-  .fuild {
-    font-size: calc(12px + ((1vw - 5.43px) * 2.67261)); } }
+    content: 'sm min'; } }
 
 @media (min-width: 34em) and (max-width: 46.8125em) {
 
   .only {
     content: 'sm, md'; } }
+
+@media (min-width: 61.9375em) {
+
+  .fluid {
+    font-size: 24px; }
+
+  .fluid2 {
+    font-size: 24px; } }
 
 @media (max-width: 34em) {
 
@@ -128,11 +138,3 @@ input.placeholder:placeholder-shown {
 
   .mq-screen {
     content: 'number'; } }
-
-@media (max-width: 62em) {
-
-  .fuild {
-    font-size: 24px; }
-
-  .fuild2 {
-    font-size: 24px; } }
