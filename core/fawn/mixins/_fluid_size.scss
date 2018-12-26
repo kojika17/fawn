@@ -39,8 +39,6 @@
     }
   }
 
-  $minvw: $minvw + 1;
-
   $x: $minvw / 100;
   $y: 100 * ($max-font-size - $min-font-size) / ($maxvw - $minvw);
   $z: $min-font-size;
@@ -51,8 +49,8 @@
 
   #{$propaty}: $z;
 
-  $maxmq: px2em($maxvw - 1);
-  $minmq: px2em($minvw - 1);
+  $maxmq: px2em($maxvw + 1);
+  $minmq: px2em($minvw + 1);
 
   @media (min-width: #{$minmq}) {
     #{$propaty}: calc(#{$z} + ((1vw - #{$x}) * #{strip-unit($y)}));

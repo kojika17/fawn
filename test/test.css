@@ -94,27 +94,25 @@ input.placeholder:placeholder-shown {
   .only {
     content: '440px, 800px'; } }
 
-@media (min-width: 31.25em) {
+@media (min-width: 31.3125em) {
 
   .fluid2 {
-    font-size: calc(14px + ((1vw - 5.01px) * 2.03666)); } }
-
-@media (min-width: 34em) {
-
-  .fluid {
-    font-size: calc(12px + ((1vw - 5.45px) * 2.68456)); } }
+    font-size: calc(14px + ((1vw - 5px) * 2.03252)); } }
 
 @media (min-width: 34.0625em) {
 
   .mq-screen {
-    content: 'sm min'; } }
+    content: 'sm min'; }
+
+  .fluid {
+    font-size: calc(12px + ((1vw - 5.44px) * 2.67857)); } }
 
 @media (min-width: 34.0625em) and (max-width: 46.8125em) {
 
   .only {
     content: 'sm, md'; } }
 
-@media (min-width: 61.9375em) {
+@media (min-width: 62.0625em) {
 
   .fluid {
     font-size: 24px; }
