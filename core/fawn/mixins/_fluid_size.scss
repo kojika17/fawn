@@ -39,7 +39,7 @@
     }
   }
 
-  $minvw: $minvw - 1;
+  $minvw: $minvw + 1;
 
   $x: $minvw / 100;
   $y: 100 * ($max-font-size - $min-font-size) / ($maxvw - $minvw);

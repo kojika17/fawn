@@ -84,32 +84,32 @@ input.placeholder:placeholder-shown {
   font-size: 14px;
   content: "0.66667em"; }
 
-@media (min-width: 22.5em) and (max-width: 62em) {
+@media (min-width: 22.5625em) and (max-width: 62em) {
 
   .only {
     content: '360px, lg'; } }
 
-@media (min-width: 27.5em) and (max-width: 50em) {
+@media (min-width: 27.5625em) and (max-width: 50em) {
 
   .only {
     content: '440px, 800px'; } }
 
-@media (min-width: 31.125em) {
+@media (min-width: 31.25em) {
 
   .fluid2 {
-    font-size: calc(14px + ((1vw - 4.99px) * 2.0284)); } }
+    font-size: calc(14px + ((1vw - 5.01px) * 2.03666)); } }
 
-@media (min-width: 33.875em) {
+@media (min-width: 34em) {
 
   .fluid {
-    font-size: calc(12px + ((1vw - 5.43px) * 2.67261)); } }
+    font-size: calc(12px + ((1vw - 5.45px) * 2.68456)); } }
 
-@media (min-width: 33.9375em) {
+@media (min-width: 34.0625em) {
 
   .mq-screen {
     content: 'sm min'; } }
 
-@media (min-width: 34em) and (max-width: 46.8125em) {
+@media (min-width: 34.0625em) and (max-width: 46.8125em) {
 
   .only {
     content: 'sm, md'; } }

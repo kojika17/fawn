@@ -15,7 +15,7 @@
     }
   }
   @if($width == min) {
-    $result: $result - 1;
+    $result: $result + 1;
   }
   @media (#{$width}-width: #{px2em($result)}) {
     @content;

@@ -47,7 +47,7 @@
       @content;
     }
   } @else {
-    @media (min-width: #{px2em($screen-min)}) and (max-width: #{px2em($screen-max)}) {
+    @media (min-width: #{px2em($screen-min + 1)}) and (max-width: #{px2em($screen-max)}) {
       @content;
     }
   }
