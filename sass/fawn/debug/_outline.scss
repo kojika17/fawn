@@ -1,0 +1,15 @@
+$outline: false !default;
+
+//== CSS Outlining
+@mixin _debug-outlining($color: #4A3) {
+  *,
+  *::before,
+  *::after {
+    outline: 2px solid $color !important;
+    box-shadow: 3px 3px 8px #666;
+  }
+}
+
+@if($outline) {
+  @include _debug-outlining();
+}

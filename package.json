@@ -5,7 +5,7 @@
   "scripts": {
     "predev": "npm run sass:build",
     "dev": "npm run sass:watch",
-    "sass:watch": "chokidar 'scss/**/*.scss' -c 'npm run sass:build' --initial",
+    "sass:watch": "chokidar '**/**/*.scss' -c 'npm run sass:build' --initial",
     "sass:build": "sass example/example.scss example/example.css --no-source-map"
   },
   "dependencies": {},

@@ -1,107 +1,108 @@
 //
 // Test
 // --------------------------------------------------
-@import '../core/fawn';
+@use '../sass/fawn' with (
+  $debug-outline: true
+);
 
-// Test
-@include debug-contrast(#666, #fff, false, 'header');
+// // Test
 .header .area {
-  @include debug-contrast(#888, #fff);
+  @include fawn.debug-contrast(#888, #fff);
 }
 
 
-.mq-screen {
-  @include mq(sm) {
-    content: 'sm';
-  }
-  @include mq(sm, min) {
-    content: 'sm min';
-  }
+// .mq-screen {
+//   @include mq(sm) {
+//     content: 'sm';
+//   }
+//   @include mq(sm, min) {
+//     content: 'sm min';
+//   }
 
-  @include mq(md) {
-    content: 'md';
-  }
+//   @include mq(md) {
+//     content: 'md';
+//   }
 
-  @include mq(1208px) {
-    content: 'number';
-  }
-}
+//   @include mq(1208px) {
+//     content: 'number';
+//   }
+// }
 
-.only {
-  @include mq-only(sm) {
-    content: 'sm';
-  }
+// .only {
+//   @include mq-only(sm) {
+//     content: 'sm';
+//   }
 
-  @include mq-only(sm, md) {
-    content: 'sm, md';
-  }
+//   @include mq-only(sm, md) {
+//     content: 'sm, md';
+//   }
 
-  @include mq-only(360px, lg) {
-    content: '360px, lg';
-  }
+//   @include mq-only(360px, lg) {
+//     content: '360px, lg';
+//   }
 
-  @include mq-only(440px, 800px) {
-    content: '440px, 800px';
-  }
+//   @include mq-only(440px, 800px) {
+//     content: '440px, 800px';
+//   }
 
-}
+// }
 
-.bgsz {
-  @include bgsz('./foo.png', 2, 100px, 200px) {
-    background-repeat: no-repeat;
-  }
-}
+// .bgsz {
+//   @include bgsz('./foo.png', 2, 100px, 200px) {
+//     background-repeat: no-repeat;
+//   }
+// }
 
-.position-a {
-  @include position(0);
-}
-.position-b {
-  @include position(fixed, 0);
-}
+// .position-a {
+//   @include position(0);
+// }
+// .position-b {
+//   @include position(fixed, 0);
+// }
 
-.position-c {
-  @include position(fixed, 10px);
-}
-
-
-.youtube {
- @include youtube(560, 320);
-}
+// .position-c {
+//   @include position(fixed, 10px);
+// }
 
 
-input.placeholder {
-  @include placeholder {
-    color: #aaa;
-  }
-}
+// .youtube {
+//  @include youtube(560, 320);
+// }
 
 
-.header {
-  z-index: z(header);
-}
-.modal {
-  z-index: z(modal);
-}
-.modal-button {
-  z-index: z(modal, images, mask);
-}
+// input.placeholder {
+//   @include placeholder {
+//     color: #aaa;
+//   }
+// }
 
-.color {
-  background-color: c(background);
-  .button {
-    background-color: c(front, button, background);
-    color: c(front, button, text);
-  }
-}
 
-.foo {
-  background-image: ur('pic.png');
-}
+// .header {
+//   z-index: z(header);
+// }
+// .modal {
+//   z-index: z(modal);
+// }
+// .modal-button {
+//   z-index: z(modal, images, mask);
+// }
 
-.fluid {
-  @include flsz(24px, 12px, lg, sm);
-}
-.fluid2 {
-  @include flsz(24px, 14px, lg, 500px);
-  content: '#{px2em(12px, 18px)}';
-}
+// .color {
+//   background-color: c(background);
+//   .button {
+//     background-color: c(front, button, background);
+//     color: c(front, button, text);
+//   }
+// }
+
+// .foo {
+//   background-image: ur('pic.png');
+// }
+
+// .fluid {
+//   @include flsz(24px, 12px, lg, sm);
+// }
+// .fluid2 {
+//   @include flsz(24px, 14px, lg, 500px);
+//   content: '#{px2em(12px, 18px)}';
+// }
