@@ -1,24 +1,25 @@
 {
   "name": "fawn",
-  "version": "0.0.1",
-  "description": "Sass Tool Set",
-  "main": "",
+  "version": "0.0.2",
+  "main": "fawn.scss",
   "scripts": {
-    "start": "gulp"
+    "predev": "npm run sass:build",
+    "dev": "npm run sass:watch",
+    "sass:watch": "chokidar 'scss/**/*.scss' -c 'npm run sass:build' --initial",
+    "sass:build": "sass example/example.scss example/example.css --no-source-map"
   },
+  "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^6.7.3",
-    "browser-sync": "^2.16.0",
-    "css-mqpacker": "^5.0.1",
-    "gulp": "^3.9.1",
-    "gulp-postcss": "^6.2.0",
-    "gulp-sass": "^4.0.2",
-    "postcss-assets": "^4.1.0"
+    "chokidar-cli": "^2.1.0",
+    "sass": "^1.26.8"
   },
-  "browserslist": [
-    "last 2 versions",
-    "Android >= 4.1",
-    "iOS >= 8",
-    "ie >= 10"
-  ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kojika17/fawn.git"
+  },
+  "author": "kojika17",
+  "bugs": {
+    "url": "https://github.com/kojika17/fawn/issues"
+  },
+  "homepage": "https://github.com/kojika17/fawn#readme"
 }
